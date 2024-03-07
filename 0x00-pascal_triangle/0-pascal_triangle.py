@@ -32,7 +32,7 @@ def pascal_triangle(n):
             else:
                 # Calculate the value for the current non-edge column
                 column_val = pascal[i_row - 1][j_col] + \
-                            pascal[i_row - 1][j_col - 1]
+                    pascal[i_row - 1][j_col - 1]
                 # Append the calculated value to the current row
                 row.append(column_val)
 
