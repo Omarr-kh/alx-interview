@@ -1,6 +1,15 @@
 #!/usr/bin/python3
 
+"""
+Generate Pascals triangle
+"""
+
 def pascal_triangle(n):
+    """
+    Returns a list of lists of integers representing
+    Pascals triangle.
+    """
+
     if n <= 0:
         return []
 
