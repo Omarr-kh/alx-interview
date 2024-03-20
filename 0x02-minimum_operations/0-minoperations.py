@@ -7,11 +7,16 @@ def minOperations(n):
     if n == 1:
         return 0  # No operations needed if there's only one H
 
-    dp = [0] * (n + 1)
+    dp = [float('inf')] * (n + 1)
+    dp[1] = 0  # Base case
+
     for i in range(2, n + 1):
-        dp[i] = float('inf')
-        for j in range(2, int(i ** 0.5) + 1):
+        for j in range(1, i):
             if i % j == 0:
                 dp[i] = min(dp[i], dp[j] + i // j)
-                dp[i] = min(dp[i], dp[i // j] + j)
+
+        # For prime numbers, directly paste the content n-1 times after copying
+        if dp[i] == float('inf'):
+            dp[i] = i
+
     return dp[n]
