@@ -21,7 +21,7 @@ def minOperations(n):
             copied_len = h_done
             h_done += copied_len
             operations += 2
-        elif clipboard > 0:
+        elif copied_len > 0:
             h_done += copied_len
             operations += 1
     return operations
