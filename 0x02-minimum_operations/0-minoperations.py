@@ -17,7 +17,7 @@ def minOperations(n):
             h_done += copied_len
             operations += 2
         elif n - h_done > 0 and (n - h_done) % h_done == 0:
-             # copy all and paste
+            # copy all and paste
             copied_len = h_done
             h_done += copied_len
             operations += 2
