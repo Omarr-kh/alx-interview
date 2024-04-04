@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+""" Log Parsing """
 import sys
 from typing import Dict
-""" Log Parsing """
 
 
 def print_statistics(total_size: int, status_codes: Dict[str, int]) -> None:
