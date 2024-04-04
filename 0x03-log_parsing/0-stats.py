@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 import sys
 from typing import Dict
+""" Log Parsing """
 
 
 def print_statistics(total_size: int, status_codes: Dict[str, int]) -> None:
+    """ print statistics for current 10 lines """
     print(f"File size: {total_size}")
 
     for key, val in sorted(status_codes.items(), key=lambda x: x[0]):
@@ -11,6 +13,7 @@ def print_statistics(total_size: int, status_codes: Dict[str, int]) -> None:
 
 
 def main():
+    """ read lines from stdin """
     total_file_size = 0
     status_codes = {}
     valid_codes = [200, 301, 400, 401, 403, 404, 405, 500]
