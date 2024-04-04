@@ -3,9 +3,9 @@ import sys
 from typing import Dict
 
 
-def print_statistics(total_file_size: int, status_codes: Dict[str, int]) -> None:
-    print(f"File size: {total_file_size}")
-    
+def print_statistics(total_size: int, status_codes: Dict[str, int]) -> None:
+    print(f"File size: {total_size}")
+
     for key, val in sorted(status_codes.items(), key=lambda x: x[0]):
         print(f"{key}: {val}")
 
