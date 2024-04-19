@@ -1,9 +1,9 @@
 #!/usr/bin/node
 const request = require('request');
-const api_url = 'https://swapi-api.alx-tools.com/api';
+const apiURL = 'https://swapi-api.alx-tools.com/api';
 
 if (process.argv.length > 2) {
-  request(`${api_url}/films/${process.argv[2]}/`, (err, _, body) => {
+  request(`${apiURL}/films/${process.argv[2]}/`, (err, _, body) => {
     if (err) {
       console.log(err);
     }
