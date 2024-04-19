@@ -13,9 +13,9 @@ if (process.argv.length > 2) {
         request(url, (reqErr, _, reqBody) => {
           if (reqErr) {
             reject(reqErr);
-	  }
+          }
           resolve(JSON.parse(reqBody).name);
-	});
+        });
       }));
     Promise.all(characterNames)
       .then(names => console.log(names.join('\n')))
