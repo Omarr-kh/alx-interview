@@ -5,12 +5,18 @@
 def makeChange(coins, total):
     """ the algorithm to solve the make change problem """
     if total <= 0:
-        return 0
-    dp = [total + 1] * (total + 1)
-    dp[0] = 0
+        return -1
 
-    for a in range(1, total + 1):
-        for c in coins:
-            if (a - c) >= 0:
-                dp[a] = min(dp[a], 1 + dp[a - c])
-    return dp[total] if dp[total] != total + 1 else -1
+    coins = sorted(coins, reverse=True)
+    i = 0
+    coins_count = 0
+    n = len(coins)
+    while total > 0:
+        if i >= n:
+            return -1
+        if total - coins[i] >= 0:
+            total -= coins[i]
+            coins_count += 1
+        else:
+            i += 1
+    return coins_count
