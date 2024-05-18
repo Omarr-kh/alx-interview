@@ -22,8 +22,8 @@ def isWinner(x, nums):
             primes_list[k - 1] = False
 
     # loop through rounds and check n
-    for _, round_n in zip(range(x), nums):
-        round_n_primes = len(list(filter(lambda num: num, primes_list[0:round_n])))
+    for _, m in zip(range(x), nums):
+        round_n_primes = len(list(filter(lambda num: num, primes_list[0:m])))
         maria_wins += round_n_primes % 2 == 1
         ben_wins += round_n_primes % 2 == 0
     # can't determine winner
